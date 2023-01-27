@@ -1,0 +1,81 @@
+org: subhamayaws
+app: aws-node-project
+service: fuchsia
+frameworkVersion: '3'
+
+custom:
+  tableName: 'ProductCatalog'
+
+provider:
+  name: aws
+  stage: dev
+  runtime: nodejs14.x
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource:
+            - Fn::GetAtt: [ ProductCatalogTable, Arn ]
+  environment:
+    PRODUCTS_TABLE: ${self:custom.tableName}
+
+functions:
+  create:
+    handler: handler/createProduct.createProduct
+    events:
+      - http:
+          path: products
+          method: post
+          cors: true
+  list:
+    handler: handler/listProducts.listProducts
+    events:
+      - http:
+          path: products/list
+          method: get
+          cors: true
+
+  get:
+    handler: handler/getProduct.getProduct
+    events:
+      - http:
+          path: products/{Id}
+          method: get
+          cors: true
+
+  delete:
+    handler: handler/deleteProduct.deleteProduct
+    events:
+      - http:
+          path: products/delete/{Id}
+          method: delete
+          cors: true
+
+  update:
+    handler: handler/updateProduct.updateProduct
+    events:
+      - http:
+          path: products/update/
+          method: post
+          cors: true
+resources:
+  Resources:
+    ProductCatalogTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: Id
+            AttributeType: N
+        KeySchema:
+          - AttributeName: Id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TableName: ${self:custom.tableName}
+

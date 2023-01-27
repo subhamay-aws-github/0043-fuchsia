@@ -1,0 +1,115 @@
+------------ Item 1------------------------------
+{
+    "Id": 101,
+    "Authors": [
+        "Author1"
+    ],
+    "Dimensions": "8.5 x 11.0 x 0.5",
+    "InPublication": true,
+    "ISBN": "111-1111111111",
+    "PageCount": 500,
+    "Price": 2,
+    "ProductCategory": "Book",
+    "Title": "Book 101 Title"
+}
+
+------------ Item 2------------------------------
+{
+    "Id": 102,
+    "Authors": [
+        "Author1",
+        "Author2"
+    ],
+    "Dimensions": "8.5 x 11.0 x 0.8",
+    "InPublication": true,
+    "ISBN": "222-2222222222",
+    "PageCount": 600,
+    "Price": 20,
+    "ProductCategory": "Book",
+    "Title": "Book 102 Title"
+}
+------------ Item 3------------------------------
+{
+    "Id": 103,
+    "Authors": [
+        "Author1",
+        "Author2"
+    ],
+    "Dimensions": "8.5 x 11.0 x 1.5",
+    "InPublication": false,
+    "ISBN": "333-3333333333",
+    "PageCount": 600,
+    "Price": 2000,
+    "ProductCategory": "Book",
+    "Title": "Book 103 Title"
+}
+------------ Item 4------------------------------
+{
+    "Id": 201,
+    "BicycleType": "Road",
+    "Brand": "Mountain A",
+    "Color": [
+        "Red",
+        "Black"
+    ],
+    "Description": "201 Description",
+    "Price": 100,
+    "ProductCategory": "Bicycle",
+    "Title": "18-Bike-201"
+}
+------------ Item 5------------------------------
+{
+    "Id": 202,
+    "BicycleType": "Road",
+    "Brand": "Brand-Company A",
+    "Color": [
+        "Green",
+        "Black"
+    ],
+    "Description": "202 Description",
+    "Price": 200,
+    "ProductCategory": "Bicycle",
+    "Title": "21-Bike-202"
+}
+------------ Item 6------------------------------
+{
+    "Id": 203,
+    "BicycleType": "Road",
+    "Brand": "Brand-Company B",
+    "Color": [
+        "Red",
+        "Green",
+        "Black"
+    ],
+    "Description": "203 Description",
+    "Price": 300,
+    "ProductCategory": "Bicycle",
+    "Title": "19-Bike-203"
+}
+------------ Item 7------------------------------
+{
+    "Id": 204,
+    "BicycleType": "Mountain",
+    "Brand": "Brand-Company B",
+    "Color": [
+        "Red"
+    ],
+    "Description": "204 Description",
+    "Price": 400,
+    "ProductCategory": "Bicycle",
+    "Title": "18-Bike-204"
+}
+------------ Item 8------------------------------
+{
+    "Id": 205,
+    "BicycleType": "Hybrid",
+    "Brand": "Brand-Company C",
+    "Color": [
+        "Red",
+        "Black"
+    ],
+    "Description": "205 Description",
+    "Price": 500,
+    "ProductCategory": "Bicycle",
+    "Title": "18-Bike-204"
+}
